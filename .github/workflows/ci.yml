@@ -68,14 +68,14 @@ jobs:
 
       - name: Upload coverage report
         if: matrix.node == 22
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage
           path: coverage/
           retention-days: 7
 
       - name: Upload test results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-results-${{ matrix.node }}
           path: test-results.json
@@ -110,7 +110,7 @@ jobs:
           npm run build > dist/build-output.log 2>&1
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: build
           path: dist/
