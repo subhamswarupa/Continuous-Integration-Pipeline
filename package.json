@@ -1,0 +1,44 @@
+{
+  "name": "continuous-integration-pipeline",
+  "version": "1.0.0",
+  "description": "A modern Continuous Integration (CI) pipeline using GitHub Actions, ESLint, Prettier, and Jest",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint src/ tests/",
+    "format": "prettier --check \"src/**/*.js\" \"tests/**/*.js\"",
+    "format:fix": "prettier --write \"src/**/*.js\" \"tests/**/*.js\"",
+    "build": "node src/index.js",
+    "audit": "npm audit --audit-level=critical"
+  },
+  "keywords": [
+    "ci",
+    "github-actions",
+    "devops",
+    "continuous-integration"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^16.0.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.4.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ],
+    "coverageDirectory": "coverage"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
